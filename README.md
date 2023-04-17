@@ -1,64 +1,61 @@
-# CodeIgniter 4 Application Starter
 
-## What is CodeIgniter?
+# Aplikasi Pendaftaran Mahasiswa Baru
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible, and secure. 
-More information can be found at the [official site](http://codeigniter.com).
+Aplikasi Pendaftaran Mahasiswa Baru - Bang Ambo University
 
-This repository holds a composer-installable app starter.
-It has been built from the 
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Authors
 
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
+- [@Arya Dwi Putra](https://github.com/aryadptra)
 
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/). 
 
-## Installation & updates
+## Features
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+- Admin (panitia)
+- Member(peserta)
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+Admin (panitia) dapat:
 
-## Setup
+- Melakukan login
+-  Mengelola informasi pendaftaran
+- Mengelola data fakultas
+- Mengelola data prodi
+- Mengelola data pendaftaran 
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+Member (peserta) dapat:
 
-## Important Change with index.php
+- Mengunjungi halaman utama website 
+- Membuat akun pendaftaran Melakukan login 
+- Melakukan pendaftran: 
+    - Tahap satu (Mengisi Biodata)
+    - Tahap dua (Pilih Fakultas Dan Prodi) 
+    - Tahap tiga (Upload Berkas Pendaftaran) 
+    - Tahap empat (Resume Pendaftaran) 
+    - Mencetak kartu pendaftaran 
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+Email dan password (default) login Aplikasi :
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+| Email  | Password | Role |
+| ------------- | ------------- | ------------- |
+| admin-pmb@ba-university.ac.id  | admin123  | Admin (panitia)  |
+| lelahmishquen@gmail.com  | member123  | Member (peserta)  |
+| penikmatsenja@gmail.com  | member123  | Member (peserta)  |
+| otewekaya@gmail.com | member123  | Member (peserta)  |
 
-**Please** read the user guide for a better explanation of how CI4 works!
-The user guide updating and deployment is a bit awkward at the moment, but we are working on it!
+## Installation
 
-## Repository Management
+- Clone repository ini
 
-We use Github issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+```bash
+  git clone https://github.com/aryadptra/pmb-ci.git
+```
+    
+- Buat database baru dengan nama pmb_ci di phpMyAdmin atau sejenisnya.
 
-This repository is a "distribution" one, built by our release preparation script. 
-Problems with it can be raised on our forum, or as issues in the main repository.
+- Import database yang berada di direktori pmb_ci/database/app-pmbdb.sql
 
-## Server Requirements
+- Atur konfigurasi pada file .env sesuai dengan pengaturan yang digunakan
 
-PHP version 7.2 or higher is required, with the following extensions installed: 
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
+- Jalankan skrip pada terminal
+```bash
+  php spark serve
+```
